@@ -14,11 +14,11 @@ Depends:
 Date: 2021-09-02
 Suggests:
     testthat,
-    stringdist
+    stringdist,
+    XML
 Imports:
     yaml,
     jsonlite,
-    XML,
     data.table
 License: MIT + file LICENSE
 URL: https://renkun-ken.github.io/rlist/,
