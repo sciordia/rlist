@@ -89,6 +89,10 @@ list.loadfile.yaml <- function(file, ...) {
 list.loadfile.yml <- list.loadfile.yaml
 
 list.loadfile.xml <- function(file, ...) {
+  if (!requireNamespace("XML", quietly = TRUE)) {
+    stop("XML loading not available in this build (package 'XML' is not installed).",
+         call. = FALSE)
+  }
   xmlData <- XML::xmlParse(file, ...)
   XML::xmlToList(xmlData)
 }
