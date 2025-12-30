@@ -43,6 +43,10 @@ list.load <- function(file, type = tools::file_ext(file), ..., guess = c("json",
   fun <- paste("list.loadfile", tolower(type), sep = ".")
   fun[!nztype] <- NA_character_
   guess <- tolower(guess)
+  # webR / minimal builds: don't try XML in guess mode if XML isn't available
+  if (!requireNamespace("XML", quietly = TRUE)) {
+    guess <- setdiff(guess, "xml")
+  }
   pb <- if (progress)
     txtProgressBar(min = 0L, max = length(file), style = 3L) else NULL
   res <- if (length(file) == 1L)
