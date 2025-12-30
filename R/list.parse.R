@@ -52,7 +52,7 @@ list.parse.data.frame <- function(x, ...) {
 
 #' @export
 #' @rdname list.parse
-#' @param type The type of data to parse. Currently json and yaml are supported.
+#' @param type The type of data to parse. Currently json, yaml and xml are supported (xml requires package 'XML')
 list.parse.character <- function(x, type, ...) {
   if (length(x) == 0L)
     return(list()) else if (length(x) == 1L) {
@@ -65,9 +65,11 @@ list.parse.character <- function(x, type, ...) {
         simplifyMatrix = FALSE), list(...))
     } else if (tolower(type) == "xml") {
       if (!requireNamespace("XML", quietly = TRUE)) {
-          stop("XML parsing not available in this build (package 'XML' is not installed).",
-          call. = FALSE)
-    }
+        stop(
+          "XML parsing not available in this build (package 'XML' is not installed).",
+          call. = FALSE
+        )
+      }
       XML::xmlToList(XML::xmlParseString(x, ...))
     } else {
       stop("Unsupported type of data", call. = FALSE)
