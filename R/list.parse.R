@@ -64,6 +64,10 @@ list.parse.character <- function(x, type, ...) {
       callwith(jsonlite::fromJSON, list(x, simplifyVector = FALSE, simplifyDataFrame = FALSE,
         simplifyMatrix = FALSE), list(...))
     } else if (tolower(type) == "xml") {
+      if (!requireNamespace("XML", quietly = TRUE)) {
+          stop("XML parsing not available in this build (package 'XML' is not installed).",
+          call. = FALSE)
+    }
       XML::xmlToList(XML::xmlParseString(x, ...))
     } else {
       stop("Unsupported type of data", call. = FALSE)
