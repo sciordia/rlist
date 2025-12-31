@@ -1,6 +1,6 @@
 
 
-# rlist-lite (compatible with webR - without XML)
+# rlist-lite (Without XML - Compatible with webR)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/renkun-ken/rlist/workflows/R-CMD-check/badge.svg)](https://github.com/renkun-ken/rlist/actions)
