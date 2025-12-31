@@ -1,9 +1,9 @@
 Package: rlist
 Type: Package
 Title: A Toolbox for Non-Tabular Data Manipulation
-Version: 0.4.6.2
-Author: Kun Ren <ken@renkun.me>
-Maintainer: Kun Ren <ken@renkun.me>
+Version: 0.4.6.2b
+Author: Sergio Ciordia <sciordia@cnb.csic.es>
+Maintainer: Sergio Ciordia <sciordia@cnb.csic.es>
 Description: Provides a set of functions for data manipulation with
     list objects, including mapping, filtering, grouping, sorting,
     updating, searching, and other useful functions. Most functions
@@ -11,7 +11,7 @@ Description: Provides a set of functions for data manipulation with
     lists can be chained.
 Depends:
     R (>= 2.15)
-Date: 2021-09-02
+Date: 2025-12-31
 Suggests:
     testthat,
     stringdist,
@@ -21,10 +21,8 @@ Imports:
     jsonlite,
     data.table
 License: MIT + file LICENSE
-URL: https://renkun-ken.github.io/rlist/,
-    https://github.com/renkun-ken/rlist,
-    https://renkun-ken.github.io/rlist-tutorial/
-BugReports: https://github.com/renkun-ken/rlist/issues
+URL: https://github.com/sciordia/rlist/
+BugReports: https://github.com/sciordia/rlist/issues
 Roxygen: list()
 ByteCompile: TRUE
 LazyData: true
